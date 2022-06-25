@@ -6,8 +6,8 @@ sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding = 'utf-8')
 import datetime
 
 # strftime으로 날짜형식 변경하여 맞췄다. "월,일,년 형식"
-first_date = datetime.datetime.today().strftime("%#m/%#d/%y")
-second_date = datetime.datetime(2022, 6, 20).strftime("%#m/%#d/%y")
+first_date = datetime.datetime.today().strftime("%#m/%#d/%Y")
+second_date = datetime.datetime(2022, 6, 20).strftime("%#m/%#d/%Y")
 
 # first_date와 second_date 출력
 print(first_date)
