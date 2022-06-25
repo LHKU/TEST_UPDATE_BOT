@@ -1,0 +1,435 @@
+[
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "BeautifulSoup",
+        "importPath": "bs4",
+        "description": "bs4",
+        "isExtraImport": true,
+        "detail": "bs4",
+        "documentation": {}
+    },
+    {
+        "label": "BeautifulSoup",
+        "importPath": "bs4",
+        "description": "bs4",
+        "isExtraImport": true,
+        "detail": "bs4",
+        "documentation": {}
+    },
+    {
+        "label": "BeautifulSoup",
+        "importPath": "bs4",
+        "description": "bs4",
+        "isExtraImport": true,
+        "detail": "bs4",
+        "documentation": {}
+    },
+    {
+        "label": "BeautifulSoup",
+        "importPath": "bs4",
+        "description": "bs4",
+        "isExtraImport": true,
+        "detail": "bs4",
+        "documentation": {}
+    },
+    {
+        "label": "BeautifulSoup",
+        "importPath": "bs4",
+        "description": "bs4",
+        "isExtraImport": true,
+        "detail": "bs4",
+        "documentation": {}
+    },
+    {
+        "label": "io",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "io",
+        "description": "io",
+        "detail": "io",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "datetime",
+        "description": "datetime",
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "text",
+        "importPath": "cgitb",
+        "description": "cgitb",
+        "isExtraImport": true,
+        "detail": "cgitb",
+        "documentation": {}
+    },
+    {
+        "label": "text",
+        "importPath": "cgitb",
+        "description": "cgitb",
+        "isExtraImport": true,
+        "detail": "cgitb",
+        "documentation": {}
+    },
+    {
+        "label": "text",
+        "importPath": "cgitb",
+        "description": "cgitb",
+        "isExtraImport": true,
+        "detail": "cgitb",
+        "documentation": {}
+    },
+    {
+        "label": "telegram",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "telegram",
+        "description": "telegram",
+        "detail": "telegram",
+        "documentation": {}
+    },
+    {
+        "label": "importlib_load_entry_point",
+        "kind": 2,
+        "importPath": "Scripts.futurize-script",
+        "description": "Scripts.futurize-script",
+        "peekOfCode": "def importlib_load_entry_point(spec, group, name):\n    dist_name, _, _ = spec.partition('==')\n    matches = (\n        entry_point\n        for entry_point in distribution(dist_name).entry_points\n        if entry_point.group == group and entry_point.name == name\n    )\n    return next(matches).load()\nglobals().setdefault('load_entry_point', importlib_load_entry_point)\nif __name__ == '__main__':",
+        "detail": "Scripts.futurize-script",
+        "documentation": {}
+    },
+    {
+        "label": "__requires__",
+        "kind": 5,
+        "importPath": "Scripts.futurize-script",
+        "description": "Scripts.futurize-script",
+        "peekOfCode": "__requires__ = 'future==0.18.2'\ntry:\n    from importlib.metadata import distribution\nexcept ImportError:\n    try:\n        from importlib_metadata import distribution\n    except ImportError:\n        from pkg_resources import load_entry_point\ndef importlib_load_entry_point(spec, group, name):\n    dist_name, _, _ = spec.partition('==')",
+        "detail": "Scripts.futurize-script",
+        "documentation": {}
+    },
+    {
+        "label": "importlib_load_entry_point",
+        "kind": 2,
+        "importPath": "Scripts.pasteurize-script",
+        "description": "Scripts.pasteurize-script",
+        "peekOfCode": "def importlib_load_entry_point(spec, group, name):\n    dist_name, _, _ = spec.partition('==')\n    matches = (\n        entry_point\n        for entry_point in distribution(dist_name).entry_points\n        if entry_point.group == group and entry_point.name == name\n    )\n    return next(matches).load()\nglobals().setdefault('load_entry_point', importlib_load_entry_point)\nif __name__ == '__main__':",
+        "detail": "Scripts.pasteurize-script",
+        "documentation": {}
+    },
+    {
+        "label": "__requires__",
+        "kind": 5,
+        "importPath": "Scripts.pasteurize-script",
+        "description": "Scripts.pasteurize-script",
+        "peekOfCode": "__requires__ = 'future==0.18.2'\ntry:\n    from importlib.metadata import distribution\nexcept ImportError:\n    try:\n        from importlib_metadata import distribution\n    except ImportError:\n        from pkg_resources import load_entry_point\ndef importlib_load_entry_point(spec, group, name):\n    dist_name, _, _ = spec.partition('==')",
+        "detail": "Scripts.pasteurize-script",
+        "documentation": {}
+    },
+    {
+        "label": "sys.stdout",
+        "kind": 5,
+        "importPath": "crawl2",
+        "description": "crawl2",
+        "peekOfCode": "sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding = 'utf-8')\nurl = 'https://docs.microsoft.com/en-us/windows-insider/flight-hub/#windows-10-may-2021-update-21h1'\nresponse = requests.get(url)\nif response.status_code == 200:\n    html = response.text\n    soup = BeautifulSoup(html, 'html.parser')\n    div = soup.select_one('.content > :nth-child(14)')\n    titles = div.select('table > tbody > tr:nth-child(1) > td:nth-child(2) > a')\n    for title in titles:\n        print(title.get_text())",
+        "detail": "crawl2",
+        "documentation": {}
+    },
+    {
+        "label": "url",
+        "kind": 5,
+        "importPath": "crawl2",
+        "description": "crawl2",
+        "peekOfCode": "url = 'https://docs.microsoft.com/en-us/windows-insider/flight-hub/#windows-10-may-2021-update-21h1'\nresponse = requests.get(url)\nif response.status_code == 200:\n    html = response.text\n    soup = BeautifulSoup(html, 'html.parser')\n    div = soup.select_one('.content > :nth-child(14)')\n    titles = div.select('table > tbody > tr:nth-child(1) > td:nth-child(2) > a')\n    for title in titles:\n        print(title.get_text())\nelse : ",
+        "detail": "crawl2",
+        "documentation": {}
+    },
+    {
+        "label": "response",
+        "kind": 5,
+        "importPath": "crawl2",
+        "description": "crawl2",
+        "peekOfCode": "response = requests.get(url)\nif response.status_code == 200:\n    html = response.text\n    soup = BeautifulSoup(html, 'html.parser')\n    div = soup.select_one('.content > :nth-child(14)')\n    titles = div.select('table > tbody > tr:nth-child(1) > td:nth-child(2) > a')\n    for title in titles:\n        print(title.get_text())\nelse : \n    print(response.status_code)",
+        "detail": "crawl2",
+        "documentation": {}
+    },
+    {
+        "label": "sys.stdout",
+        "kind": 5,
+        "importPath": "date_test",
+        "description": "date_test",
+        "peekOfCode": "sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding = 'utf-8')\nimport datetime\n# strftime으로 날짜형식 변경하여 맞췄다. \"월,일,년 형식\"\nfirst_date = datetime.datetime.today().strftime(\"%#m/%#d/%Y\")\nsecond_date = datetime.datetime(2022, 6, 20).strftime(\"%#m/%#d/%Y\")\n# first_date와 second_date 출력\nprint(first_date)\nprint(second_date)\n# true, false로 출력\nprint(first_date == second_date)",
+        "detail": "date_test",
+        "documentation": {}
+    },
+    {
+        "label": "first_date",
+        "kind": 5,
+        "importPath": "date_test",
+        "description": "date_test",
+        "peekOfCode": "first_date = datetime.datetime.today().strftime(\"%#m/%#d/%Y\")\nsecond_date = datetime.datetime(2022, 6, 20).strftime(\"%#m/%#d/%Y\")\n# first_date와 second_date 출력\nprint(first_date)\nprint(second_date)\n# true, false로 출력\nprint(first_date == second_date)\n# if, else 문으로 확인, import sys와 io로 인코딩처리 후 한글로 실행 됨\nif first_date == second_date:\n    print(\"같습니다\")",
+        "detail": "date_test",
+        "documentation": {}
+    },
+    {
+        "label": "second_date",
+        "kind": 5,
+        "importPath": "date_test",
+        "description": "date_test",
+        "peekOfCode": "second_date = datetime.datetime(2022, 6, 20).strftime(\"%#m/%#d/%Y\")\n# first_date와 second_date 출력\nprint(first_date)\nprint(second_date)\n# true, false로 출력\nprint(first_date == second_date)\n# if, else 문으로 확인, import sys와 io로 인코딩처리 후 한글로 실행 됨\nif first_date == second_date:\n    print(\"같습니다\")\nelse :",
+        "detail": "date_test",
+        "documentation": {}
+    },
+    {
+        "label": "sys.stdout",
+        "kind": 5,
+        "importPath": "tele_test",
+        "description": "tele_test",
+        "peekOfCode": "sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding = 'utf-8')\nimport telegram\nmy_token = '5337479883:AAFi4A8Qimb67JVdiFuaDjbp5JRpMCn0OIM'\nRoom_ID = \"5007202751\"\nbot = telegram.Bot(token = my_token)\nurl = 'https://docs.microsoft.com/en-us/windows-insider/flight-hub/#windows-10-may-2021-update-21h1'\nresponse = requests.get(url)\nfirst_date = datetime.datetime.today().strftime(\"%#m/%#d/%Y\")\n# 아래 주석 코드는 날짜 비교 테스트용\n# first_date = datetime.datetime(2022, 6, 2).strftime(\"%#m/%#d/%Y\")",
+        "detail": "tele_test",
+        "documentation": {}
+    },
+    {
+        "label": "my_token",
+        "kind": 5,
+        "importPath": "tele_test",
+        "description": "tele_test",
+        "peekOfCode": "my_token = '5337479883:AAFi4A8Qimb67JVdiFuaDjbp5JRpMCn0OIM'\nRoom_ID = \"5007202751\"\nbot = telegram.Bot(token = my_token)\nurl = 'https://docs.microsoft.com/en-us/windows-insider/flight-hub/#windows-10-may-2021-update-21h1'\nresponse = requests.get(url)\nfirst_date = datetime.datetime.today().strftime(\"%#m/%#d/%Y\")\n# 아래 주석 코드는 날짜 비교 테스트용\n# first_date = datetime.datetime(2022, 6, 2).strftime(\"%#m/%#d/%Y\")\ntry :\n    response.status_code == 200",
+        "detail": "tele_test",
+        "documentation": {}
+    },
+    {
+        "label": "Room_ID",
+        "kind": 5,
+        "importPath": "tele_test",
+        "description": "tele_test",
+        "peekOfCode": "Room_ID = \"5007202751\"\nbot = telegram.Bot(token = my_token)\nurl = 'https://docs.microsoft.com/en-us/windows-insider/flight-hub/#windows-10-may-2021-update-21h1'\nresponse = requests.get(url)\nfirst_date = datetime.datetime.today().strftime(\"%#m/%#d/%Y\")\n# 아래 주석 코드는 날짜 비교 테스트용\n# first_date = datetime.datetime(2022, 6, 2).strftime(\"%#m/%#d/%Y\")\ntry :\n    response.status_code == 200\n    html = response.text",
+        "detail": "tele_test",
+        "documentation": {}
+    },
+    {
+        "label": "bot",
+        "kind": 5,
+        "importPath": "tele_test",
+        "description": "tele_test",
+        "peekOfCode": "bot = telegram.Bot(token = my_token)\nurl = 'https://docs.microsoft.com/en-us/windows-insider/flight-hub/#windows-10-may-2021-update-21h1'\nresponse = requests.get(url)\nfirst_date = datetime.datetime.today().strftime(\"%#m/%#d/%Y\")\n# 아래 주석 코드는 날짜 비교 테스트용\n# first_date = datetime.datetime(2022, 6, 2).strftime(\"%#m/%#d/%Y\")\ntry :\n    response.status_code == 200\n    html = response.text\n    soup = BeautifulSoup(html, 'html.parser')",
+        "detail": "tele_test",
+        "documentation": {}
+    },
+    {
+        "label": "url",
+        "kind": 5,
+        "importPath": "tele_test",
+        "description": "tele_test",
+        "peekOfCode": "url = 'https://docs.microsoft.com/en-us/windows-insider/flight-hub/#windows-10-may-2021-update-21h1'\nresponse = requests.get(url)\nfirst_date = datetime.datetime.today().strftime(\"%#m/%#d/%Y\")\n# 아래 주석 코드는 날짜 비교 테스트용\n# first_date = datetime.datetime(2022, 6, 2).strftime(\"%#m/%#d/%Y\")\ntry :\n    response.status_code == 200\n    html = response.text\n    soup = BeautifulSoup(html, 'html.parser')\n    div = soup.select_one('.content > :nth-child(14)')",
+        "detail": "tele_test",
+        "documentation": {}
+    },
+    {
+        "label": "response",
+        "kind": 5,
+        "importPath": "tele_test",
+        "description": "tele_test",
+        "peekOfCode": "response = requests.get(url)\nfirst_date = datetime.datetime.today().strftime(\"%#m/%#d/%Y\")\n# 아래 주석 코드는 날짜 비교 테스트용\n# first_date = datetime.datetime(2022, 6, 2).strftime(\"%#m/%#d/%Y\")\ntry :\n    response.status_code == 200\n    html = response.text\n    soup = BeautifulSoup(html, 'html.parser')\n    div = soup.select_one('.content > :nth-child(14)')\n    titles = div.select('table > tbody > tr:nth-child(1) > td:nth-child(2) > a')",
+        "detail": "tele_test",
+        "documentation": {}
+    },
+    {
+        "label": "first_date",
+        "kind": 5,
+        "importPath": "tele_test",
+        "description": "tele_test",
+        "peekOfCode": "first_date = datetime.datetime.today().strftime(\"%#m/%#d/%Y\")\n# 아래 주석 코드는 날짜 비교 테스트용\n# first_date = datetime.datetime(2022, 6, 2).strftime(\"%#m/%#d/%Y\")\ntry :\n    response.status_code == 200\n    html = response.text\n    soup = BeautifulSoup(html, 'html.parser')\n    div = soup.select_one('.content > :nth-child(14)')\n    titles = div.select('table > tbody > tr:nth-child(1) > td:nth-child(2) > a')\n    for title in titles:",
+        "detail": "tele_test",
+        "documentation": {}
+    },
+    {
+        "label": "sys.stdout",
+        "kind": 5,
+        "importPath": "testdate",
+        "description": "testdate",
+        "peekOfCode": "sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding = 'utf-8')\nurl = 'https://docs.microsoft.com/en-us/windows-insider/flight-hub/#windows-10-may-2021-update-21h1'\nresponse = requests.get(url)\nfirst_date = datetime.datetime.today().strftime(\"%#m/%#d/%Y\")\n# 아래 주석 코드는 날짜비교 테스트용\n# first_date = datetime.datetime(2022, 6, 2).strftime(\"%#m/%#d/%Y\")\nif response.status_code == 200:\n    html = response.text\n    soup = BeautifulSoup(html, 'html.parser')\n    div = soup.select_one('.content > :nth-child(14)')",
+        "detail": "testdate",
+        "documentation": {}
+    },
+    {
+        "label": "url",
+        "kind": 5,
+        "importPath": "testdate",
+        "description": "testdate",
+        "peekOfCode": "url = 'https://docs.microsoft.com/en-us/windows-insider/flight-hub/#windows-10-may-2021-update-21h1'\nresponse = requests.get(url)\nfirst_date = datetime.datetime.today().strftime(\"%#m/%#d/%Y\")\n# 아래 주석 코드는 날짜비교 테스트용\n# first_date = datetime.datetime(2022, 6, 2).strftime(\"%#m/%#d/%Y\")\nif response.status_code == 200:\n    html = response.text\n    soup = BeautifulSoup(html, 'html.parser')\n    div = soup.select_one('.content > :nth-child(14)')\n    titles = div.select('table > tbody > tr:nth-child(1) > td:nth-child(2) > a')",
+        "detail": "testdate",
+        "documentation": {}
+    },
+    {
+        "label": "response",
+        "kind": 5,
+        "importPath": "testdate",
+        "description": "testdate",
+        "peekOfCode": "response = requests.get(url)\nfirst_date = datetime.datetime.today().strftime(\"%#m/%#d/%Y\")\n# 아래 주석 코드는 날짜비교 테스트용\n# first_date = datetime.datetime(2022, 6, 2).strftime(\"%#m/%#d/%Y\")\nif response.status_code == 200:\n    html = response.text\n    soup = BeautifulSoup(html, 'html.parser')\n    div = soup.select_one('.content > :nth-child(14)')\n    titles = div.select('table > tbody > tr:nth-child(1) > td:nth-child(2) > a')\n    for title in titles:",
+        "detail": "testdate",
+        "documentation": {}
+    },
+    {
+        "label": "first_date",
+        "kind": 5,
+        "importPath": "testdate",
+        "description": "testdate",
+        "peekOfCode": "first_date = datetime.datetime.today().strftime(\"%#m/%#d/%Y\")\n# 아래 주석 코드는 날짜비교 테스트용\n# first_date = datetime.datetime(2022, 6, 2).strftime(\"%#m/%#d/%Y\")\nif response.status_code == 200:\n    html = response.text\n    soup = BeautifulSoup(html, 'html.parser')\n    div = soup.select_one('.content > :nth-child(14)')\n    titles = div.select('table > tbody > tr:nth-child(1) > td:nth-child(2) > a')\n    for title in titles:\n        if first_date == title.get_text() :",
+        "detail": "testdate",
+        "documentation": {}
+    },
+    {
+        "label": "sys.stdout",
+        "kind": 5,
+        "importPath": "windows_update",
+        "description": "windows_update",
+        "peekOfCode": "sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding = 'utf-8')\nimport telegram\nmy_token = '5337479883:AAFi4A8Qimb67JVdiFuaDjbp5JRpMCn0OIM'\nRoom_ID = \"5007202751\"\nbot = telegram.Bot(token = my_token)\nurl = 'https://docs.microsoft.com/en-us/windows-insider/flight-hub/#windows-10-may-2021-update-21h1'\nresponse = requests.get(url)\nfirst_date = datetime.datetime.today().strftime(\"%#m/%#d/%Y\")\n# 아래 주석 코드는 날짜 비교 테스트용\n# first_date = datetime.datetime(2022, 6, 2).strftime(\"%#m/%#d/%Y\")",
+        "detail": "windows_update",
+        "documentation": {}
+    },
+    {
+        "label": "my_token",
+        "kind": 5,
+        "importPath": "windows_update",
+        "description": "windows_update",
+        "peekOfCode": "my_token = '5337479883:AAFi4A8Qimb67JVdiFuaDjbp5JRpMCn0OIM'\nRoom_ID = \"5007202751\"\nbot = telegram.Bot(token = my_token)\nurl = 'https://docs.microsoft.com/en-us/windows-insider/flight-hub/#windows-10-may-2021-update-21h1'\nresponse = requests.get(url)\nfirst_date = datetime.datetime.today().strftime(\"%#m/%#d/%Y\")\n# 아래 주석 코드는 날짜 비교 테스트용\n# first_date = datetime.datetime(2022, 6, 2).strftime(\"%#m/%#d/%Y\")\ntry :\n    response.status_code == 200",
+        "detail": "windows_update",
+        "documentation": {}
+    },
+    {
+        "label": "Room_ID",
+        "kind": 5,
+        "importPath": "windows_update",
+        "description": "windows_update",
+        "peekOfCode": "Room_ID = \"5007202751\"\nbot = telegram.Bot(token = my_token)\nurl = 'https://docs.microsoft.com/en-us/windows-insider/flight-hub/#windows-10-may-2021-update-21h1'\nresponse = requests.get(url)\nfirst_date = datetime.datetime.today().strftime(\"%#m/%#d/%Y\")\n# 아래 주석 코드는 날짜 비교 테스트용\n# first_date = datetime.datetime(2022, 6, 2).strftime(\"%#m/%#d/%Y\")\ntry :\n    response.status_code == 200\n    html = response.text",
+        "detail": "windows_update",
+        "documentation": {}
+    },
+    {
+        "label": "bot",
+        "kind": 5,
+        "importPath": "windows_update",
+        "description": "windows_update",
+        "peekOfCode": "bot = telegram.Bot(token = my_token)\nurl = 'https://docs.microsoft.com/en-us/windows-insider/flight-hub/#windows-10-may-2021-update-21h1'\nresponse = requests.get(url)\nfirst_date = datetime.datetime.today().strftime(\"%#m/%#d/%Y\")\n# 아래 주석 코드는 날짜 비교 테스트용\n# first_date = datetime.datetime(2022, 6, 2).strftime(\"%#m/%#d/%Y\")\ntry :\n    response.status_code == 200\n    html = response.text\n    soup = BeautifulSoup(html, 'html.parser')",
+        "detail": "windows_update",
+        "documentation": {}
+    },
+    {
+        "label": "url",
+        "kind": 5,
+        "importPath": "windows_update",
+        "description": "windows_update",
+        "peekOfCode": "url = 'https://docs.microsoft.com/en-us/windows-insider/flight-hub/#windows-10-may-2021-update-21h1'\nresponse = requests.get(url)\nfirst_date = datetime.datetime.today().strftime(\"%#m/%#d/%Y\")\n# 아래 주석 코드는 날짜 비교 테스트용\n# first_date = datetime.datetime(2022, 6, 2).strftime(\"%#m/%#d/%Y\")\ntry :\n    response.status_code == 200\n    html = response.text\n    soup = BeautifulSoup(html, 'html.parser')\n    div = soup.select_one('.content > :nth-child(14)')",
+        "detail": "windows_update",
+        "documentation": {}
+    },
+    {
+        "label": "response",
+        "kind": 5,
+        "importPath": "windows_update",
+        "description": "windows_update",
+        "peekOfCode": "response = requests.get(url)\nfirst_date = datetime.datetime.today().strftime(\"%#m/%#d/%Y\")\n# 아래 주석 코드는 날짜 비교 테스트용\n# first_date = datetime.datetime(2022, 6, 2).strftime(\"%#m/%#d/%Y\")\ntry :\n    response.status_code == 200\n    html = response.text\n    soup = BeautifulSoup(html, 'html.parser')\n    div = soup.select_one('.content > :nth-child(14)')\n    titles = div.select('table > tbody > tr:nth-child(1) > td:nth-child(2) > a')",
+        "detail": "windows_update",
+        "documentation": {}
+    },
+    {
+        "label": "first_date",
+        "kind": 5,
+        "importPath": "windows_update",
+        "description": "windows_update",
+        "peekOfCode": "first_date = datetime.datetime.today().strftime(\"%#m/%#d/%Y\")\n# 아래 주석 코드는 날짜 비교 테스트용\n# first_date = datetime.datetime(2022, 6, 2).strftime(\"%#m/%#d/%Y\")\ntry :\n    response.status_code == 200\n    html = response.text\n    soup = BeautifulSoup(html, 'html.parser')\n    div = soup.select_one('.content > :nth-child(14)')\n    titles = div.select('table > tbody > tr:nth-child(1) > td:nth-child(2) > a')\n    for title in titles:",
+        "detail": "windows_update",
+        "documentation": {}
+    },
+    {
+        "label": "sys.stdout",
+        "kind": 5,
+        "importPath": "windows_update2",
+        "description": "windows_update2",
+        "peekOfCode": "sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding = 'utf-8')\nimport telegram\nmy_token = '5337479883:AAFi4A8Qimb67JVdiFuaDjbp5JRpMCn0OIM'\nRoom_ID = \"5007202751\"\nbot = telegram.Bot(token = my_token)\nurl = 'https://docs.microsoft.com/en-us/windows-insider/flight-hub/#windows-10-may-2021-update-21h1'\nresponse = requests.get(url)\nfirst_date = datetime.datetime.today().strftime(\"%#m/%#d/%Y\")\n# 아래 주석 코드는 날짜 비교 테스트용\n# first_date = datetime.datetime(2022, 6, 2).strftime(\"%#m/%#d/%Y\")",
+        "detail": "windows_update2",
+        "documentation": {}
+    },
+    {
+        "label": "my_token",
+        "kind": 5,
+        "importPath": "windows_update2",
+        "description": "windows_update2",
+        "peekOfCode": "my_token = '5337479883:AAFi4A8Qimb67JVdiFuaDjbp5JRpMCn0OIM'\nRoom_ID = \"5007202751\"\nbot = telegram.Bot(token = my_token)\nurl = 'https://docs.microsoft.com/en-us/windows-insider/flight-hub/#windows-10-may-2021-update-21h1'\nresponse = requests.get(url)\nfirst_date = datetime.datetime.today().strftime(\"%#m/%#d/%Y\")\n# 아래 주석 코드는 날짜 비교 테스트용\n# first_date = datetime.datetime(2022, 6, 2).strftime(\"%#m/%#d/%Y\")\ntry :\n    response.status_code == 200",
+        "detail": "windows_update2",
+        "documentation": {}
+    },
+    {
+        "label": "Room_ID",
+        "kind": 5,
+        "importPath": "windows_update2",
+        "description": "windows_update2",
+        "peekOfCode": "Room_ID = \"5007202751\"\nbot = telegram.Bot(token = my_token)\nurl = 'https://docs.microsoft.com/en-us/windows-insider/flight-hub/#windows-10-may-2021-update-21h1'\nresponse = requests.get(url)\nfirst_date = datetime.datetime.today().strftime(\"%#m/%#d/%Y\")\n# 아래 주석 코드는 날짜 비교 테스트용\n# first_date = datetime.datetime(2022, 6, 2).strftime(\"%#m/%#d/%Y\")\ntry :\n    response.status_code == 200\n    html = response.text",
+        "detail": "windows_update2",
+        "documentation": {}
+    },
+    {
+        "label": "bot",
+        "kind": 5,
+        "importPath": "windows_update2",
+        "description": "windows_update2",
+        "peekOfCode": "bot = telegram.Bot(token = my_token)\nurl = 'https://docs.microsoft.com/en-us/windows-insider/flight-hub/#windows-10-may-2021-update-21h1'\nresponse = requests.get(url)\nfirst_date = datetime.datetime.today().strftime(\"%#m/%#d/%Y\")\n# 아래 주석 코드는 날짜 비교 테스트용\n# first_date = datetime.datetime(2022, 6, 2).strftime(\"%#m/%#d/%Y\")\ntry :\n    response.status_code == 200\n    html = response.text\n    soup = BeautifulSoup(html, 'html.parser')",
+        "detail": "windows_update2",
+        "documentation": {}
+    },
+    {
+        "label": "url",
+        "kind": 5,
+        "importPath": "windows_update2",
+        "description": "windows_update2",
+        "peekOfCode": "url = 'https://docs.microsoft.com/en-us/windows-insider/flight-hub/#windows-10-may-2021-update-21h1'\nresponse = requests.get(url)\nfirst_date = datetime.datetime.today().strftime(\"%#m/%#d/%Y\")\n# 아래 주석 코드는 날짜 비교 테스트용\n# first_date = datetime.datetime(2022, 6, 2).strftime(\"%#m/%#d/%Y\")\ntry :\n    response.status_code == 200\n    html = response.text\n    soup = BeautifulSoup(html, 'html.parser')\n    div = soup.select_one('.content > :nth-child(14)')",
+        "detail": "windows_update2",
+        "documentation": {}
+    },
+    {
+        "label": "response",
+        "kind": 5,
+        "importPath": "windows_update2",
+        "description": "windows_update2",
+        "peekOfCode": "response = requests.get(url)\nfirst_date = datetime.datetime.today().strftime(\"%#m/%#d/%Y\")\n# 아래 주석 코드는 날짜 비교 테스트용\n# first_date = datetime.datetime(2022, 6, 2).strftime(\"%#m/%#d/%Y\")\ntry :\n    response.status_code == 200\n    html = response.text\n    soup = BeautifulSoup(html, 'html.parser')\n    div = soup.select_one('.content > :nth-child(14)')\n    titles = div.select('table > tbody > tr:nth-child(1) > td:nth-child(2) > a')",
+        "detail": "windows_update2",
+        "documentation": {}
+    },
+    {
+        "label": "first_date",
+        "kind": 5,
+        "importPath": "windows_update2",
+        "description": "windows_update2",
+        "peekOfCode": "first_date = datetime.datetime.today().strftime(\"%#m/%#d/%Y\")\n# 아래 주석 코드는 날짜 비교 테스트용\n# first_date = datetime.datetime(2022, 6, 2).strftime(\"%#m/%#d/%Y\")\ntry :\n    response.status_code == 200\n    html = response.text\n    soup = BeautifulSoup(html, 'html.parser')\n    div = soup.select_one('.content > :nth-child(14)')\n    titles = div.select('table > tbody > tr:nth-child(1) > td:nth-child(2) > a')\n    for title in titles:",
+        "detail": "windows_update2",
+        "documentation": {}
+    }
+]
