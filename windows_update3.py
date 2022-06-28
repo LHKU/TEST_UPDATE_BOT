@@ -28,7 +28,7 @@ response = requests.get(url)
 
 
 first_date = datetime.datetime.today().strftime("%#m/%#d/%Y")
-# 아래 주석 코드는 날짜 비교 테스트용
+# 아래 주석 코드는 날짜 비교 테스트용 (업데이트 날짜)
 # first_date = datetime.datetime(2022, 6, 2).strftime("%#m/%#d/%Y")
 
 
