@@ -553,11 +553,20 @@
         "documentation": {}
     },
     {
+        "label": "getYesterday",
+        "kind": 2,
+        "importPath": "windows_update4",
+        "description": "windows_update4",
+        "peekOfCode": "def getYesterday(): \n\ttoday=datetime.date.today() \n\toneday=datetime.timedelta(days=1) \n\tyesterday=today-oneday  \n\treturn yesterday\n# 날짜형식을 변경하여 yesterday라는 변수에 담는다\nyesterday = getYesterday().strftime(\"%#m/%#d/%Y\")\n# 아래 주석 코드는 날짜 비교 테스트용 (업데이트 날짜)\n# yesterday = datetime.datetime(2022, 6, 2).strftime(\"%#m/%#d/%Y\")\ntry:",
+        "detail": "windows_update4",
+        "documentation": {}
+    },
+    {
         "label": "sys.stdout",
         "kind": 5,
         "importPath": "windows_update4",
         "description": "windows_update4",
-        "peekOfCode": "sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding='utf-8')\nmy_token = '5230040914:AAHvhyBp8_3oCW2KXReW_Anv01l5YAGUHM8'\nRoom_ID = \"564276368\"\nbot = telegram.Bot(token=my_token)\nurl = 'https://docs.microsoft.com/en-us/windows-insider/flight-hub/#windows-10-may-2021-update-21h1'\n# 아래 주석 코드는 오류확인용 URL\n# url = 'https://google.com'\nresponse = requests.get(url)\nfirst_date = datetime.datetime.today().strftime(\"%#m/%#d/%Y\")\n# 아래 주석 코드는 날짜 비교 테스트용 (업데이트 날짜)",
+        "peekOfCode": "sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding='utf-8')\nmy_token = '5230040914:AAHvhyBp8_3oCW2KXReW_Anv01l5YAGUHM8'\nRoom_ID = \"564276368\"\nbot = telegram.Bot(token=my_token)\nurl = 'https://docs.microsoft.com/en-us/windows-insider/flight-hub/#windows-10-may-2021-update-21h1'\n# 아래 주석 코드는 오류확인용 URL\n# url = 'https://google.com'\nresponse = requests.get(url)\n# 오늘날짜로 출력\n# first_date = datetime.datetime.today().strftime(\"%#m/%#d/%Y\")",
         "detail": "windows_update4",
         "documentation": {}
     },
@@ -566,7 +575,7 @@
         "kind": 5,
         "importPath": "windows_update4",
         "description": "windows_update4",
-        "peekOfCode": "my_token = '5230040914:AAHvhyBp8_3oCW2KXReW_Anv01l5YAGUHM8'\nRoom_ID = \"564276368\"\nbot = telegram.Bot(token=my_token)\nurl = 'https://docs.microsoft.com/en-us/windows-insider/flight-hub/#windows-10-may-2021-update-21h1'\n# 아래 주석 코드는 오류확인용 URL\n# url = 'https://google.com'\nresponse = requests.get(url)\nfirst_date = datetime.datetime.today().strftime(\"%#m/%#d/%Y\")\n# 아래 주석 코드는 날짜 비교 테스트용 (업데이트 날짜)\n# first_date = datetime.datetime(2022, 6, 2).strftime(\"%#m/%#d/%Y\")",
+        "peekOfCode": "my_token = '5230040914:AAHvhyBp8_3oCW2KXReW_Anv01l5YAGUHM8'\nRoom_ID = \"564276368\"\nbot = telegram.Bot(token=my_token)\nurl = 'https://docs.microsoft.com/en-us/windows-insider/flight-hub/#windows-10-may-2021-update-21h1'\n# 아래 주석 코드는 오류확인용 URL\n# url = 'https://google.com'\nresponse = requests.get(url)\n# 오늘날짜로 출력\n# first_date = datetime.datetime.today().strftime(\"%#m/%#d/%Y\")\n# 아래 주석 코드는 날짜 비교 테스트용 (업데이트 날짜)",
         "detail": "windows_update4",
         "documentation": {}
     },
@@ -575,7 +584,7 @@
         "kind": 5,
         "importPath": "windows_update4",
         "description": "windows_update4",
-        "peekOfCode": "Room_ID = \"564276368\"\nbot = telegram.Bot(token=my_token)\nurl = 'https://docs.microsoft.com/en-us/windows-insider/flight-hub/#windows-10-may-2021-update-21h1'\n# 아래 주석 코드는 오류확인용 URL\n# url = 'https://google.com'\nresponse = requests.get(url)\nfirst_date = datetime.datetime.today().strftime(\"%#m/%#d/%Y\")\n# 아래 주석 코드는 날짜 비교 테스트용 (업데이트 날짜)\n# first_date = datetime.datetime(2022, 6, 2).strftime(\"%#m/%#d/%Y\")\ntry:",
+        "peekOfCode": "Room_ID = \"564276368\"\nbot = telegram.Bot(token=my_token)\nurl = 'https://docs.microsoft.com/en-us/windows-insider/flight-hub/#windows-10-may-2021-update-21h1'\n# 아래 주석 코드는 오류확인용 URL\n# url = 'https://google.com'\nresponse = requests.get(url)\n# 오늘날짜로 출력\n# first_date = datetime.datetime.today().strftime(\"%#m/%#d/%Y\")\n# 아래 주석 코드는 날짜 비교 테스트용 (업데이트 날짜)\n# first_date = datetime.datetime(2022, 6, 2).strftime(\"%#m/%#d/%Y\")",
         "detail": "windows_update4",
         "documentation": {}
     },
@@ -584,7 +593,7 @@
         "kind": 5,
         "importPath": "windows_update4",
         "description": "windows_update4",
-        "peekOfCode": "bot = telegram.Bot(token=my_token)\nurl = 'https://docs.microsoft.com/en-us/windows-insider/flight-hub/#windows-10-may-2021-update-21h1'\n# 아래 주석 코드는 오류확인용 URL\n# url = 'https://google.com'\nresponse = requests.get(url)\nfirst_date = datetime.datetime.today().strftime(\"%#m/%#d/%Y\")\n# 아래 주석 코드는 날짜 비교 테스트용 (업데이트 날짜)\n# first_date = datetime.datetime(2022, 6, 2).strftime(\"%#m/%#d/%Y\")\ntry:\n    response.status_code == 200",
+        "peekOfCode": "bot = telegram.Bot(token=my_token)\nurl = 'https://docs.microsoft.com/en-us/windows-insider/flight-hub/#windows-10-may-2021-update-21h1'\n# 아래 주석 코드는 오류확인용 URL\n# url = 'https://google.com'\nresponse = requests.get(url)\n# 오늘날짜로 출력\n# first_date = datetime.datetime.today().strftime(\"%#m/%#d/%Y\")\n# 아래 주석 코드는 날짜 비교 테스트용 (업데이트 날짜)\n# first_date = datetime.datetime(2022, 6, 2).strftime(\"%#m/%#d/%Y\")\n# 어제 날짜로 출력",
         "detail": "windows_update4",
         "documentation": {}
     },
@@ -593,7 +602,7 @@
         "kind": 5,
         "importPath": "windows_update4",
         "description": "windows_update4",
-        "peekOfCode": "url = 'https://docs.microsoft.com/en-us/windows-insider/flight-hub/#windows-10-may-2021-update-21h1'\n# 아래 주석 코드는 오류확인용 URL\n# url = 'https://google.com'\nresponse = requests.get(url)\nfirst_date = datetime.datetime.today().strftime(\"%#m/%#d/%Y\")\n# 아래 주석 코드는 날짜 비교 테스트용 (업데이트 날짜)\n# first_date = datetime.datetime(2022, 6, 2).strftime(\"%#m/%#d/%Y\")\ntry:\n    response.status_code == 200\n    html = response.text",
+        "peekOfCode": "url = 'https://docs.microsoft.com/en-us/windows-insider/flight-hub/#windows-10-may-2021-update-21h1'\n# 아래 주석 코드는 오류확인용 URL\n# url = 'https://google.com'\nresponse = requests.get(url)\n# 오늘날짜로 출력\n# first_date = datetime.datetime.today().strftime(\"%#m/%#d/%Y\")\n# 아래 주석 코드는 날짜 비교 테스트용 (업데이트 날짜)\n# first_date = datetime.datetime(2022, 6, 2).strftime(\"%#m/%#d/%Y\")\n# 어제 날짜로 출력\ndef getYesterday(): ",
         "detail": "windows_update4",
         "documentation": {}
     },
@@ -602,16 +611,16 @@
         "kind": 5,
         "importPath": "windows_update4",
         "description": "windows_update4",
-        "peekOfCode": "response = requests.get(url)\nfirst_date = datetime.datetime.today().strftime(\"%#m/%#d/%Y\")\n# 아래 주석 코드는 날짜 비교 테스트용 (업데이트 날짜)\n# first_date = datetime.datetime(2022, 6, 2).strftime(\"%#m/%#d/%Y\")\ntry:\n    response.status_code == 200\n    html = response.text\n    soup = BeautifulSoup(html, 'html.parser')\n    div = soup.select_one('.content > :nth-child(14)')\n    titles = div.select(",
+        "peekOfCode": "response = requests.get(url)\n# 오늘날짜로 출력\n# first_date = datetime.datetime.today().strftime(\"%#m/%#d/%Y\")\n# 아래 주석 코드는 날짜 비교 테스트용 (업데이트 날짜)\n# first_date = datetime.datetime(2022, 6, 2).strftime(\"%#m/%#d/%Y\")\n# 어제 날짜로 출력\ndef getYesterday(): \n\ttoday=datetime.date.today() \n\toneday=datetime.timedelta(days=1) \n\tyesterday=today-oneday  ",
         "detail": "windows_update4",
         "documentation": {}
     },
     {
-        "label": "first_date",
+        "label": "yesterday",
         "kind": 5,
         "importPath": "windows_update4",
         "description": "windows_update4",
-        "peekOfCode": "first_date = datetime.datetime.today().strftime(\"%#m/%#d/%Y\")\n# 아래 주석 코드는 날짜 비교 테스트용 (업데이트 날짜)\n# first_date = datetime.datetime(2022, 6, 2).strftime(\"%#m/%#d/%Y\")\ntry:\n    response.status_code == 200\n    html = response.text\n    soup = BeautifulSoup(html, 'html.parser')\n    div = soup.select_one('.content > :nth-child(14)')\n    titles = div.select(\n        'table > tbody > tr:nth-child(1) > td:nth-child(2) > a')",
+        "peekOfCode": "yesterday = getYesterday().strftime(\"%#m/%#d/%Y\")\n# 아래 주석 코드는 날짜 비교 테스트용 (업데이트 날짜)\n# yesterday = datetime.datetime(2022, 6, 2).strftime(\"%#m/%#d/%Y\")\ntry:\n    response.status_code == 200\n    html = response.text\n    soup = BeautifulSoup(html, 'html.parser')\n    div = soup.select_one('.content > :nth-child(14)')\n    titles = div.select(\n        'table > tbody > tr:nth-child(1) > td:nth-child(2) > a')",
         "detail": "windows_update4",
         "documentation": {}
     }

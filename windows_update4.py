@@ -24,10 +24,23 @@ url = 'https://docs.microsoft.com/en-us/windows-insider/flight-hub/#windows-10-m
 
 response = requests.get(url)
 
-
-first_date = datetime.datetime.today().strftime("%#m/%#d/%Y")
+# 오늘날짜로 출력
+# first_date = datetime.datetime.today().strftime("%#m/%#d/%Y")
 # 아래 주석 코드는 날짜 비교 테스트용 (업데이트 날짜)
 # first_date = datetime.datetime(2022, 6, 2).strftime("%#m/%#d/%Y")
+
+
+# 어제 날짜로 출력
+def getYesterday(): 
+	today=datetime.date.today() 
+	oneday=datetime.timedelta(days=1) 
+	yesterday=today-oneday  
+	return yesterday
+# 날짜형식을 변경하여 yesterday라는 변수에 담는다
+yesterday = getYesterday().strftime("%#m/%#d/%Y")
+# 아래 주석 코드는 날짜 비교 테스트용 (업데이트 날짜)
+# yesterday = datetime.datetime(2022, 6, 2).strftime("%#m/%#d/%Y")
+
 
 
 try:
@@ -43,20 +56,19 @@ try:
         # href로 링크가져오기 https://wikidocs.net/142389 참조
         href = title.attrs['href']
 
-        if first_date == title.get_text():
+        if yesterday == title.get_text():
             text_msg = title.get_text() + '\n' + "- 업데이트가 있습니다." + '\n' + \
                 "- URL을 확인해주세요." + '\n''\n' + href
             print(text_msg)
             bot.sendMessage(chat_id=Room_ID, text=text_msg)
 
         else:
-            text_msg = datetime.datetime.today().strftime(
-                "%#m/%#d/%Y") + '\n' + "업데이트가 없습니다."
+            text_msg = yesterday + '\n' + "업데이트가 없습니다."
             print(text_msg)
             bot.sendMessage(chat_id=Room_ID, text=text_msg)
 
 except:
-    text_msg = datetime.datetime.today().strftime("%#m/%#d/%Y") + \
+    text_msg = yesterday + \
         '\n' + "오류발생! 소스코드나 URL을 점검해주세요."
     print(text_msg)
     bot.sendMessage(chat_id=Room_ID, text=text_msg)
