@@ -12,8 +12,11 @@ import sys
 import io
 sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding='utf-8')
 
-
-my_token = '5230040914:AAHvhyBp8_3oCW2KXReW_Anv01l5YAGUHM8'
+# 텔레그램 채널1
+# my_token = '5230040914:AAHvhyBp8_3oCW2KXReW_Anv01l5YAGUHM8'
+# Room_ID = "564276368"
+# 텔레그램 채널2
+my_token = '1708473356:AAEy_R6mS9zUetC4yxq8nybjxQFJDOWi45M'
 Room_ID = "564276368"
 bot = telegram.Bot(token=my_token)
 
@@ -63,7 +66,7 @@ try:
             bot.sendMessage(chat_id=Room_ID, text=text_msg)
 
         else:
-            text_msg = yesterday + '\n' + "업데이트가 없습니다."
+            text_msg = yesterday + '\n' + "업데이트가 없습니다 (매일 12:55 확인 중)"
             print(text_msg)
             bot.sendMessage(chat_id=Room_ID, text=text_msg)
 

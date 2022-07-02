@@ -566,7 +566,7 @@
         "kind": 5,
         "importPath": "windows_update4",
         "description": "windows_update4",
-        "peekOfCode": "sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding='utf-8')\nmy_token = '5230040914:AAHvhyBp8_3oCW2KXReW_Anv01l5YAGUHM8'\nRoom_ID = \"564276368\"\nbot = telegram.Bot(token=my_token)\nurl = 'https://docs.microsoft.com/en-us/windows-insider/flight-hub/#windows-10-may-2021-update-21h1'\n# 아래 주석 코드는 오류확인용 URL\n# url = 'https://google.com'\nresponse = requests.get(url)\n# 오늘날짜로 출력\n# first_date = datetime.datetime.today().strftime(\"%#m/%#d/%Y\")",
+        "peekOfCode": "sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding='utf-8')\n# 텔레그램 채널1\n# my_token = '5230040914:AAHvhyBp8_3oCW2KXReW_Anv01l5YAGUHM8'\n# Room_ID = \"564276368\"\n# 텔레그램 채널2\nmy_token = '1708473356:AAEy_R6mS9zUetC4yxq8nybjxQFJDOWi45M'\nRoom_ID = \"564276368\"\nbot = telegram.Bot(token=my_token)\nurl = 'https://docs.microsoft.com/en-us/windows-insider/flight-hub/#windows-10-may-2021-update-21h1'\n# 아래 주석 코드는 오류확인용 URL",
         "detail": "windows_update4",
         "documentation": {}
     },
@@ -575,7 +575,7 @@
         "kind": 5,
         "importPath": "windows_update4",
         "description": "windows_update4",
-        "peekOfCode": "my_token = '5230040914:AAHvhyBp8_3oCW2KXReW_Anv01l5YAGUHM8'\nRoom_ID = \"564276368\"\nbot = telegram.Bot(token=my_token)\nurl = 'https://docs.microsoft.com/en-us/windows-insider/flight-hub/#windows-10-may-2021-update-21h1'\n# 아래 주석 코드는 오류확인용 URL\n# url = 'https://google.com'\nresponse = requests.get(url)\n# 오늘날짜로 출력\n# first_date = datetime.datetime.today().strftime(\"%#m/%#d/%Y\")\n# 아래 주석 코드는 날짜 비교 테스트용 (업데이트 날짜)",
+        "peekOfCode": "my_token = '1708473356:AAEy_R6mS9zUetC4yxq8nybjxQFJDOWi45M'\nRoom_ID = \"564276368\"\nbot = telegram.Bot(token=my_token)\nurl = 'https://docs.microsoft.com/en-us/windows-insider/flight-hub/#windows-10-may-2021-update-21h1'\n# 아래 주석 코드는 오류확인용 URL\n# url = 'https://google.com'\nresponse = requests.get(url)\n# 오늘날짜로 출력\n# first_date = datetime.datetime.today().strftime(\"%#m/%#d/%Y\")\n# 아래 주석 코드는 날짜 비교 테스트용 (업데이트 날짜)",
         "detail": "windows_update4",
         "documentation": {}
     },
